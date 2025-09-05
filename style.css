@@ -1,0 +1,414 @@
+/*  Root Variables ===== */
+:root {
+  --bg: #eef8f5;
+  --card: #ffffff;
+  --accent: #25443a;
+  --muted: #748a80;
+  --shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+  --radius-xl: 28px;
+  --max: 1050px;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  color: var(--accent);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*  Container */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*  Header / Navigation */
+header {
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.brand .title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.menu a {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.search input {
+  width: 180px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 8px 12px;
+  font-size: 13px;
+  background: #fff;
+}
+
+/*  Hero Section  */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 26px;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.subtext {
+  font-size: 12.5px;
+  color: #425c51;
+  max-width: 460px;
+}
+
+.hero-plate {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.hero-plate img {
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/*  Section Titles */
+.section-title {
+  text-align: center;
+  margin: 36px 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* About Us  */
+.about {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.about .img-stack {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  gap: 14px;
+}
+
+.about .img-stack img {
+  border-radius: 60px;
+  box-shadow: var(--shadow);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.about p {
+  margin: 0;
+  font-size: 13px;
+  color: #425c51;
+}
+
+/*  Most Popular Food  */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.card img {
+  border-radius: 16px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.pill {
+  background: #f3f6f5;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.price {
+  background: #d9efe4;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/*  Why Choose Us  */
+.why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.why .why-card {
+  background: #cfe3d8;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.why h4 {
+  margin: 0 0 6px;
+}
+
+.why p {
+  margin: 0;
+  font-size: 13px;
+  color: #425c51;
+}
+.img-stack {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  gap: 14px;
+}
+
+.img-stack img {
+  border-radius: 60px;
+  box-shadow: var(--shadow);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+/* Overlapping Image Stack */
+.img-stack {
+  display: flex;
+  position: relative;
+}
+
+.img-stack img {
+  width: 100px;   
+  height: 100px;  
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+/* second image overlaps to the right */
+.img-stack img:nth-child(2) {
+  position: absolute;
+  left: 60px;  
+  top: 20px;  
+}
+
+
+/*  Testimonials */
+.testi .item {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.testi .quote {
+  background: var(--card);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.stars {
+  color: #ffb400;
+}
+
+/*  Footer  */
+footer {
+  margin-top: 28px;
+  padding: 26px 0;
+  background: var(--bg);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.foot {
+  display: grid;
+  grid-template-columns: .7fr .7fr 1fr;
+  gap: 22px;
+}
+
+.logo-col {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.logo-col img {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+}
+
+.foot h5 {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.foot p, .foot li {
+  font-size: 13px;
+  color: #425c51;
+  margin: 0;
+}
+
+.foot ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .why { grid-template-columns: 1fr; }
+  .testi .item { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .menu { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; }
+}
+
+
+.search-cart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  padding: 8px 36px 8px 12px;
+  border-radius: 25px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #25443a;
+}
+
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 24px;
+  color: #25443a;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #d9534f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.cart-dropdown {
+  display: none;
+  position: absolute;
+  top: 36px;
+  right: 0;
+  width: 220px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
